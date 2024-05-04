@@ -1,0 +1,131 @@
+*{
+    /* In starting we remove all margin and padding */
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+}
+
+.main_box{
+    background: url("photo.jpg");
+    height: 100vh; /*Height me view port height di hai kyuki hum chahte hain ki hmare main box ki height pure document ke barabar ho jaaye isliye hi 100vh di matlab 100% height of viewport*/
+    background-size: cover;
+}
+
+.btn_one i{ 
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+    position: absolute;
+    left: 16px;
+    line-height: 60px;
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu{
+    position: fixed;
+    left: -300px; /*Mera side bar menu exist krega lekin screen par show nhi hoga jab hum left position -300px de denge*/
+    height: 100vh; /*Hum chahte hain ki hmara side bar menu bhi puri screen ke barabar height le*/
+    width: 300px;
+    background-color: rgba(255, 255, 255, 0.1);
+    box-shadow: 0 0 6px rgba(255, 255, 255, 0.5);
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .logo{
+    position: absolute;
+    width: 100%;
+    line-height: 60px;
+    box-shadow: 0 2px 4px rgba(255, 255, 255, 0.5);
+    height: 60px;
+}
+
+.sidebar_menu .logo a{
+    position: absolute;
+    left: 50px;
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+    font-weight: 500;
+}
+
+.sidebar_menu .btn_two i{
+    color: grey;
+    font-size: 25px;
+    line-height: 60px;
+    position: absolute;
+    left: 275px; /*Left se 275 isliye di kyuki mai chahta hu ki mera ye cross wala symbol box ke bilkul corner par aa jaaye*/
+    opacity: 0; /*Animation ki bajah se cross wale symbol ki opacity 0 kr di hai*/
+    cursor: pointer;
+    transition: all 0.3s linear;
+}
+
+.sidebar_menu .menu{
+    /* color: white; */
+    position: absolute;
+    width: 100%;
+    top: 80px;
+}
+
+.sidebar_menu .menu li{
+    margin-top: 6px;
+    padding: 14px 20px; /*top and bottom se 10px or left and right se 20px padding*/
+}
+
+.sidebar_menu .menu i,a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;
+}
+
+.sidebar_menu .menu i{
+    padding-right: 8px;
+}
+
+.sidebar_menu .social_media{
+    color: white;
+    opacity: 0.5;
+    position: absolute;
+    left: 25%;
+    bottom: 50px;
+}
+
+.sidebar_menu .social_media i {
+    color: white;
+    opacity: 0.5;
+    padding: 0px 5px;
+}
+
+#check{
+    display: none; /*Hmara checkbox screen se gayab ho jayega display none krne par lekin vaise element exist krega bas screen se gayab ho jayega uski space bhi hat jayegi*/
+}
+
+.sidebar_menu .menu li:hover{
+    box-shadow: 0 0 4px rgba(255, 255, 255, 0.5);
+}
+
+.btn_one i:hover{
+    font-size: 40px;
+}
+
+.btn_two i:hover{
+    font-size: 30px;
+}
+
+.sidebar_menu .social_media i:hover{
+    opacity: 1;
+    transform: scale(1.1);
+}
+
+#check:checked ~ .sidebar_menu{
+    left: 0; /*Isse mera side bar menu side me ho jayega matlab arrows par click krne par mera side bar menu dikhega aur jaise hi cross par click krenge mera side bar menu fir se andar chala jayega*/
+}
+
+/* Button 1 and button 2 ke liye opacity set krne ka matalb hai jab hum arrow pr click krke side bar menu open krenge to mera cross wala symbol dikhega arros hide ho jaega aur jab cross par click krke us sidebar menu ko band kr denge tab mera arrow dikhega */
+#check:checked ~.btn_one i{
+    opacity: 0;
+}
+
+#check:checked ~ .sidebar_menu .btn_two i{
+    opacity: 1;
+}
